@@ -1,0 +1,19 @@
+<header>
+	<h1>History</h1>
+  	<a href="/" class="icon-left-open icon_button float_left"></a>
+</header>
+
+<div  class="content">
+	<div class="history_actionBar clearfix">
+		<a class="icon-left-dir icon_button float_left" ng-show="monthHistory.previous" ng-click="previousMonth()"></a>
+		<h1>{{monthHistory.monthName}}</h1>
+		<a class="icon-right-dir icon_button float_right" ng-show="monthHistory.next" ng-click="nextMonth()"></a>
+	</div>
+	
+	<div class="history_container clearfix">
+		<div class="history_dayContainer" ng-repeat="day in monthHistory.history" ng-class="{history_out:day.count==-1}">
+			<div class="history_dayDate">{{day.day}}</div>
+			<div class="history_dayCount">{{day.count|out}}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<header>
+	<h1>{{counter.name}}</h1>
+  	<a class="icon-left-open icon_button float_left" href="/"></a>
+  	<a class="icon-history icon_button float_right" href="/counters/{{counter._id}}/history"></a>
+</header>
+
+<div class="content counter color{{counter.color}}">
+	<div class="counter_display">
+		<div class="counter_value">
+			{{counter.count}}
+			<div class="counter_unit">{{counter.unit}}</div>
+		</div>
+	</div>
+	<div class="counter_actions">
+		<div class="counter_plus" ng-click="updateCount(counter.count+1)"><span>+</span></div>
+		<div class="counter_minus" ng-click="updateCount(counter.count-1)"><span>-</span></div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<header>
+	<h1>My Counters</h1>
+	<a href="#" class="icon-add icon_button float_right"></a>
+</header>
+
+<div class="content">
+	<div ng-repeat="counter in counters" class="counterCard_container">
+		<a href="#">
+			<div class="counterCard_title">{{counter.name}}</div>
+			<div class="counterCard_info">Total : {{counter.sum}}</div>
+		</a>
+		<div class="counterCard_actions clearfix">
+			<a href="#" class="icon-delete"></a>
+			<a href="#" class="icon-edit"></a>
+			<a href="#" class="icon-history"></a>
+		</div>
+	</div>
+	<h1 ng-hide="!counters || counters.length">No counters yet.</h1>
+</div>

@@ -1,0 +1,386 @@
+/* ==========================================================================
+    General
+   ========================================================================== */
+@font-face {
+  font-family: "roboto";
+  src: url("../font/roboto-regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../font/roboto-light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../font/roboto-bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body{
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    overflow-x: hidden;
+    background-color: #36C3FF;
+}
+
+input{
+    font-size: 16px;
+    color: #333;
+    padding: 2px 8px 3px 8px;
+    position: relative;
+    display: block;
+    outline: none;/*stops the browser from highlighting the box when the cursor enters*/
+    border: none;
+    background: #FFF;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 10px;
+}
+input:focus{
+  -moz-box-shadow: 0 17px 50px 0 rgba(0,0,0,.19);
+  -webkit-box-shadow: 0 17px 50px 0 rgba(0,0,0,.19);
+  box-shadow: 0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+
+label{
+  font-size: 1.3em;
+  color: #FFF;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.float_left{
+    float: left;
+}
+
+.float_right{
+    float: right;
+}
+
+/*removing the ugly orange border at focus*/
+a,button{
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+
+button{
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
+}
+
+/*overriding bootsrap*/
+a:hover,a:active,a:focus{
+color: #FFF;
+text-decoration: none;
+}
+
+button[disabled]{
+  opacity: 0.65;
+}
+
+/* ==========================================================================
+    Action Bar
+   ========================================================================== */
+header{ 
+  height: 48px;
+  width: 100%;
+  background: rgba(0,0,0,0.1);
+  position: fixed;
+  color: #FFF;
+  line-height: 48px;
+  z-index: 10;
+}
+
+header h1{
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 48px;
+  text-align: center;
+  font-size: 1.5em;
+  float: left;
+  line-height: 48px;
+
+  font-weight: 700;
+}
+
+.icon_button{
+  font-size: 2em;
+  color: #FFF;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.icon_button:active{
+  background: rgba(0,0,0,0.1);
+  border-radius: 100px; 
+}
+
+/* ==========================================================================
+    Counters
+   ========================================================================== */
+
+.content {
+  position: fixed;
+  top: 48px; /*48 is the height of the top bar*/
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: auto;
+
+}
+
+.content > * {
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
+}
+.counterCard_container{
+  padding-top: 5px;
+  background-color: #FFF;
+  margin-bottom: 10px;
+
+  -moz-box-shadow: 0 17px 50px 0 rgba(0,0,0,.19);
+  -webkit-box-shadow: 0 17px 50px 0 rgba(0,0,0,.19);
+  box-shadow: 0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.counterCard_title{
+  color: #01B9FF;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.counterCard_info{
+  color: #666;  
+  text-align: center;
+}
+
+.counterCard_actions{
+  border-top: 1px solid #AFE7FF;
+  margin-top: 5px;
+}
+
+.counterCard_actions a {
+  float: left;
+  height: 48px;
+  width: 33%;
+  font-size: 2em;
+  color: #01B9FF;
+  text-align: center;
+  line-height: 48px;
+  border-right: 1px solid #AFE7FF;
+}
+
+.counterCard_actions a:active{
+  background-color: #F5F5F5;
+}
+
+.counterCard_actions a:last-child{
+  border-right: none;
+  width: 34%;
+  
+}
+
+.content h1{
+  text-align: center;
+  font-size: 1.2em;
+  color: #FFF;
+
+}
+
+/* ==========================================================================
+    History
+   ========================================================================== */
+.history_container{
+  margin-bottom: 10px;
+}
+
+.history_actionBar {
+  margin-bottom: 10px;
+  line-height: 48px;
+  height: 48px;
+}
+
+.history_actionBar h1{
+  margin: 0;
+  height: 48px;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 48px;
+  color: #FFF;
+  position: absolute;
+  width: 100%;
+}
+
+.history_dayContainer{
+  color: #01B9FF;
+  
+  background-color: #FFF;
+  margin-bottom: 1px;
+  width: 20%;
+  height: 5em;
+  float: left;
+  border-right: 1px solid #36C3FF;
+}
+
+.history_dayDate{
+  padding-top: 5px;
+  font-size: 1em;
+  border-bottom: 1px solid #C4EBFF;
+  text-align: center;
+  color: #297C9F;
+}
+
+.history_dayCount{
+
+  font-size: 2em;
+  text-align: center;
+}
+
+.history_out{
+  background-color: rgba(255,255,255, 0.5);
+  color: #FFF;
+}
+
+.history_out .history_dayDate{
+  border-bottom: 1px solid #36C3FF;
+}
+
+.history_limit{
+  color: #FF5252;
+}
+/* ==========================================================================
+    counter
+   ========================================================================== */
+
+.counter{
+  background-color: #FFF;
+  top: 0px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: 700;
+}
+
+.counter_display{
+  height: 50%;
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+}
+
+.counter_value{
+  font-size: 7.5em;
+  color: #FFF;
+
+  margin: auto;
+  bottom: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.counter_unit{
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.counter_actions{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 0px;
+}
+
+/*To align the text vertically*/
+.counter_actions span{
+  margin: auto;
+  bottom: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.counter_plus,.counter_minus{
+  height: 50%;
+  background-color: #36C3FF;
+  font-size: 7.5em;
+  text-align: center;
+  color: #FFF;
+  position: absolute;
+  width: 100%;
+}
+
+.counter_minus{
+  bottom: 0px;
+}
+
+.counter_plus:active,.counter_minus:active{
+  background: #30AFE5;
+}
+
+.color0{background-color: #FF5252}
+.color1{background-color: #FFCD40}
+.color2{background-color: #9FDD50}
+.color3{background-color: #AB47BC}
+.color4{background-color: #FF4081}
+
+/* ==========================================================================
+    createCounter
+   ========================================================================== */
+.createCounterForm button[type="submit"]{
+  height: 48px;
+  width: 100%;
+  font-size: 2em;
+  color: #FFF;
+  background-color: #FF5252;
+  text-align: center;
+  line-height: 48px;
+  margin-top: 2em;
+
+}
+
+.createCounterForm button[type="submit"]:active{
+  background-color: #E54A4A;
+}
+
+.unitButton{
+  height: 48px;
+  width: 33%;
+  font-size: 1.2em;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  line-height: 48px;
+}
+
+.warning{
+  color: #255D86;
+  margin-bottom: 5px;
+}
+

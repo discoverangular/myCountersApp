@@ -1,0 +1,13 @@
+<style>
+.colorPicker{background-color: #FFF;padding: 10px;margin-bottom: 10px;}
+.colorPicker_container{width: 240px;margin: auto;}
+.colorPicker_container div{height: 28px;width: 28px;border-radius: 100px;float: left;margin-left: 10px;margin-right: 10px;}
+.colorPicker_selected{border: 3px solid #5C5C5C;}
+.yellow{background-color:#FFCD40} .red{background-color:#FF5252} .pink{background-color:#FF4081}
+.green{background-color:#9FDD50} .purple{background-color:#AB47BC}
+</style>
+<div class="colorPicker clearfix">
+	<div class="colorPicker_container">
+		<div ng-repeat="color in colors" class="{{color.class}}" ng-class="{colorPicker_selected: color.isSelected}" ng-click="pick($index)"></div>
+	</div>
+</div>

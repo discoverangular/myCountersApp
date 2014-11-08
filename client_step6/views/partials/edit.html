@@ -1,0 +1,21 @@
+<header>
+	<h1>Edit</h1>
+  	<a href="/" class="icon-left-open icon_button float_left"></a>
+</header>
+
+<div  class="content" >
+	<form class="createCounterForm" name="form" ng-submit="edit()" novalidate>
+		<label for="name">Give your counter a name</label>
+	  	<input  type="text" ng-model="counter.name" name="name" placeholder="name" required ng-maxlength="16"/>
+	  	<div class="warning" ng-show="form.name.$error.maxlength"><span class="icon-attention"></span>Name should not exceed 16 characters.</div>
+	  	
+	  	<label for="unit">Unit</label>
+	   	<input  type="text" ng-model="counter.unit" name="unit" placeholder="unit" required ng-maxlength="16"/>
+	   	<div class="warning" ng-show="form.unit.$error.maxlength"><span class="icon-attention"></span>Unit should not exceed 16 characters.</div>
+
+	   	<label>Color</label>
+		<color-picker ng-model="counter.color"></color-picker>
+	   	<button type="submit" ng-disabled="form.$invalid">Edit</button>
+	</form>	 
+</div>
+
